@@ -1,4 +1,4 @@
-import 'package:weather_api/models/city_weather_entity/city_weather_entity.dart';
+import 'package:weather_api/src/feature/domain/models/city_weather_entity/city_weather_entity.dart';
 
 sealed class CurrentState {}
 
