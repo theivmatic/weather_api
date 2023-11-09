@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:weather_api/src/feature/presentation/widgets/location_name.dart';
 import 'package:weather_api/src/feature/presentation/widgets/search_bar.dart';
+import 'package:weather_api/src/feature/presentation/widgets/weather_picture.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,9 +24,15 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             CustomSearchBar(),
+            SizedBox(height: 80),
+            WeatherPictureWidget(),
+            SizedBox(height: 32),
+            LocationNameWidget(),
           ],
         ),
       ),
     );
   }
 }
+
+
