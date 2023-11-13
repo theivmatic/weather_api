@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_api/src/feature/presentation/widgets/location_name.dart';
+import 'package:weather_api/src/feature/presentation/widgets/other_data.dart';
 import 'package:weather_api/src/feature/presentation/widgets/search_bar.dart';
 import 'package:weather_api/src/feature/presentation/widgets/weather_picture.dart';
 
@@ -28,11 +29,12 @@ class _HomePageState extends State<HomePage> {
             WeatherPictureWidget(),
             SizedBox(height: 32),
             LocationNameWidget(),
+            SizedBox(height: 35),
+            OtherDataWidget(),
           ],
         ),
       ),
     );
   }
 }
-
 
