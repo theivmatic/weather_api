@@ -21,6 +21,7 @@ class LocationNameWidget extends StatelessWidget {
         SizedBox(width: 13),
         ImageIcon(
           AssetImage('assets/images/location_icon.png'),
+          size: 21,
         ),
       ],
     );
