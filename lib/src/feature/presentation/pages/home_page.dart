@@ -3,6 +3,7 @@ import 'package:weather_api/src/feature/presentation/widgets/degree.dart';
 import 'package:weather_api/src/feature/presentation/widgets/location_name.dart';
 import 'package:weather_api/src/feature/presentation/widgets/other_data.dart';
 import 'package:weather_api/src/feature/presentation/widgets/search_bar.dart';
+import 'package:weather_api/src/feature/presentation/widgets/sunrise_and_sunset.dart';
 import 'package:weather_api/src/feature/presentation/widgets/weather_picture.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,11 +35,13 @@ class _HomePageState extends State<HomePage> {
             DegreeWidget(),
             SizedBox(height: 35),
             OtherDataWidget(),
+            SunriseAndSunsetWidget(),
           ],
         ),
       ),
     );
   }
 }
+
 
 
