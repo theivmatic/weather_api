@@ -7,23 +7,19 @@ class CustomSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SearchBar(
+    return SearchBar(
       backgroundColor:
-          MaterialStatePropertyAll(Color.fromARGB(255, 253, 252, 252)),
-      elevation: MaterialStatePropertyAll(0),
+          const MaterialStatePropertyAll(Color.fromARGB(255, 253, 252, 252)),
+      elevation: const MaterialStatePropertyAll(0),
       hintText: 'Search Location',
       hintStyle: MaterialStatePropertyAll(
-        TextStyle(
-          color: Color.fromARGB(255, 218, 218, 218),
-          fontSize: 15
-        ),
+        Theme.of(context).textTheme.bodyMedium
       ),
-      leading: ImageIcon(
-          AssetImage('assets/images/custom_search_icon.png'),
-          size: 17.49,
-          color: Color.fromARGB(255, 196, 196, 196),
-        ),
-      // leading: Icon(Icons.search, color: Color.fromARGB(255, 218, 218, 218),),
+      leading: const ImageIcon(
+        AssetImage('assets/images/custom_search_icon.png'),
+        size: 17.49,
+        color: Color.fromARGB(255, 196, 196, 196),
+      ),
     );
   }
 }

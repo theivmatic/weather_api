@@ -7,19 +7,15 @@ class LocationNameWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           'Moscow',
-          style: TextStyle(
-            color: Color.fromARGB(255, 42, 42, 42),
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
-          ),
+          style: Theme.of(context).textTheme.headlineLarge,
         ),
-        SizedBox(width: 13),
-        ImageIcon(
+        const SizedBox(width: 13),
+        const ImageIcon(
           AssetImage('assets/images/location_icon.png'),
           size: 21,
         ),

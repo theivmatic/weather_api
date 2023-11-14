@@ -14,7 +14,7 @@ class OtherDataWidget extends StatelessWidget {
         color: const Color.fromARGB(255, 253, 252, 252),
         borderRadius: BorderRadius.circular(11),
       ),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
@@ -22,18 +22,11 @@ class OtherDataWidget extends StatelessWidget {
             children: [
               Text(
                 'TIME',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 196, 196, 196),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 '11:25 AM',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 154, 154, 154),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -42,18 +35,11 @@ class OtherDataWidget extends StatelessWidget {
             children: [
               Text(
                 'UV',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 196, 196, 196),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 '4',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 154, 154, 154),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -62,18 +48,11 @@ class OtherDataWidget extends StatelessWidget {
             children: [
               Text(
                 '% RAIN',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 196, 196, 196),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 '58%',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 154, 154, 154),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),
@@ -82,18 +61,11 @@ class OtherDataWidget extends StatelessWidget {
             children: [
               Text(
                 'AQ',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 196, 196, 196),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 '22',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 154, 154, 154),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
           ),

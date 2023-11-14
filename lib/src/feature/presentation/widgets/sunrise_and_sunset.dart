@@ -14,20 +14,14 @@ class SunriseAndSunsetWidget extends StatelessWidget {
         color: const Color.fromARGB(255, 253, 252, 252),
         borderRadius: BorderRadius.circular(11),
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'SUNRISE & SUNSET',
-            style: TextStyle(
-              color: Color.fromARGB(255, 196, 196, 196),
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          SizedBox(height: 37),
+          Text('SUNRISE & SUNSET',
+              style: Theme.of(context).textTheme.titleSmall),
+          const SizedBox(height: 37),
           Padding(
-            padding: EdgeInsets.fromLTRB(18, 0, 18, 0),
+            padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,19 +29,17 @@ class SunriseAndSunsetWidget extends StatelessWidget {
                   children: [
                     Text(
                       'Sunrise',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 196, 196, 196),
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w400,
+                          ),
                     ),
                     Text(
                       '06:25 AM',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 154, 154, 154),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
                     ),
                   ],
                 ),
@@ -55,61 +47,55 @@ class SunriseAndSunsetWidget extends StatelessWidget {
                   children: [
                     Text(
                       'Sunset',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 196, 196, 196),
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleSmall!
+                          .copyWith(fontSize: 10, fontWeight: FontWeight.w400),
                     ),
                     Text(
                       '08:30 PM',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 154, 154, 154),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
                     ),
                   ],
                 ),
               ],
             ),
           ),
-          SizedBox(height: 104),
+          const SizedBox(height: 104),
           Row(
             children: [
               Text(
                 'Length of a day:',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 154, 154, 154),
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                    ),
               ),
-              Text(
+               Text(
                 '13H 12M',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 44, 44, 44),
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                   fontSize: 10,
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Row(
             children: [
               Text(
                 'Remaining daylight:',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 154, 154, 154),
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                    ),
               ),
               Text(
                 '9H 22M',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 44, 44, 44),
+                style: Theme.of(context).textTheme.displayLarge!.copyWith(
                   fontSize: 10,
                   fontWeight: FontWeight.w400,
                 ),
