@@ -18,7 +18,12 @@ class CustomSearchBar extends StatelessWidget {
           fontSize: 15
         ),
       ),
-      leading: Icon(Icons.search, color: Color.fromARGB(255, 218, 218, 218),),
+      leading: ImageIcon(
+          AssetImage('assets/images/custom_search_icon.png'),
+          size: 17.49,
+          color: Color.fromARGB(255, 196, 196, 196),
+        ),
+      // leading: Icon(Icons.search, color: Color.fromARGB(255, 218, 218, 218),),
     );
   }
 }

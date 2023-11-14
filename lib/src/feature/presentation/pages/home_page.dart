@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
             DegreeWidget(),
             SizedBox(height: 35),
             OtherDataWidget(),
+            SizedBox(height: 26),
             SunriseAndSunsetWidget(),
           ],
         ),
