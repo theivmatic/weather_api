@@ -64,7 +64,7 @@ class SunriseAndSunsetWidget extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 104),
+          const SizedBox(height: 100),
           Row(
             children: [
               Text(

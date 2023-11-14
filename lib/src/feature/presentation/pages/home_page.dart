@@ -22,23 +22,30 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: const Padding(
-        padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-        child: Column(
-          children: [
-            CustomSearchBar(),
-            SizedBox(height: 80),
-            WeatherPictureWidget(),
-            SizedBox(height: 32),
-            LocationNameWidget(),
-            SizedBox(height: 16),
-            DegreeWidget(),
-            SizedBox(height: 35),
-            OtherDataWidget(),
-            SizedBox(height: 26),
-            SunriseAndSunsetWidget(),
-          ],
+      body: ListView(
+        physics: const BouncingScrollPhysics(
+          decelerationRate: ScrollDecelerationRate.normal,
         ),
+        children: const [
+          Padding(
+            padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+            child: Column(
+              children: [
+                CustomSearchBar(),
+                SizedBox(height: 80),
+                WeatherPictureWidget(),
+                SizedBox(height: 32),
+                LocationNameWidget(),
+                SizedBox(height: 16),
+                DegreeWidget(),
+                SizedBox(height: 35),
+                OtherDataWidget(),
+                SizedBox(height: 26),
+                SunriseAndSunsetWidget(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
