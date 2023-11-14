@@ -8,6 +8,7 @@ class SunriseAndSunsetWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.fromLTRB(20, 15, 0, 0),
       width: 327,
       height: 229,
       decoration: BoxDecoration(
@@ -64,7 +65,7 @@ class SunriseAndSunsetWidget extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 100),
+          const SizedBox(height: 80),
           Row(
             children: [
               Text(
