@@ -14,10 +14,14 @@ class DegreeWidget extends StatelessWidget {
           '31',
           style: Theme.of(context).textTheme.displayLarge
         ),
-        const ImageIcon(
-          AssetImage('assets/images/degree_icon.png'),
-          color: Color.fromARGB(255, 44, 44, 44),
-          size: 8,
+        Container(
+          height: 58,
+          alignment: Alignment.topCenter,
+          child: const ImageIcon(
+            AssetImage('assets/images/degree_icon.png'),
+            color: Color.fromARGB(255, 44, 44, 44),
+            size: 8,
+          ),
         ),
       ],
     );
