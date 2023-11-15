@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_api/src/feature/presentation/bloc/observer.dart';
 import 'package:weather_api/src/feature/presentation/pages/home_page.dart';
 
 void main() {
+  Bloc.observer = AppObserver();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 
