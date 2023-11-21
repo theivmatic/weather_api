@@ -39,45 +39,45 @@ class Current {
   String? lastUpdated;
   @JsonKey(name: 'temp_c')
   int? tempC;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'temp_f')
   double? tempF;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'is_day')
   int? isDay;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'condition')
   Condition? condition;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'wind_mph')
   double? windMph;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'wind_kph')
   double? windKph;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'wind_degree')
   int? windDegree;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'wind_dir')
   String? windDir;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'pressure_mb')
   int? pressureMb;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'pressure_in')
   double? pressureIn;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'precip_mm')
   int? precipMm;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'precip_in')
   int? precipIn;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'humidity')
   int? humidity;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'cloud')
   int? cloud;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'feelslike_c')
   int? feelslikeC;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'feelslike_f')
   double? feelslikeF;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'vis_km')
   int? visKm;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'vis_miles')
   int? visMiles;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'uv')
   int? uv;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'gust_mph')
   double? gustMph;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'gust_kph')
   double? gustKph;
 
   Current({
@@ -112,21 +112,21 @@ class Current {
 
 @JsonSerializable()
 class Location {
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'name')
   String? name;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'region')
   String? region;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'country')
   String? country;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'lat')
   double? lat;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'lon')
   double? lon;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'tz_id')
   String? tzId;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'localtime_epoch')
   int? localtimeEpoch;
-  @JsonKey(name: 'current')
+  @JsonKey(name: 'localtime')
   String? localtime;
 
   Location({
