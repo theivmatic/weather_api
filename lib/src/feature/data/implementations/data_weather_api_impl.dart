@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:weather_api/src/core/constants/uri.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_api/src/feature/domain/interfaces/data_weather_api.dart';
@@ -20,10 +18,8 @@ class DataWeatherApiImpl implements IDataWeatherApi {
         'Content-Type': 'application/json',
       },
     );
-    log(response.statusCode.toString());
     if (response.statusCode == 200) {
-      log('####${response.body}');
-      return cityWeatherEntityDataFromString(response.body);
+      return cityWeatherEntityFromJson(response.bodyBytes);
     } else {
       throw Exception(
           'Status Code: ${response.statusCode}, Message: ${response.reasonPhrase}');
