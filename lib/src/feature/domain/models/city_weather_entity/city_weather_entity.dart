@@ -3,8 +3,10 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'city_weather_entity.g.dart';
 
-CityWeatherEntity cityWeatherEntityFromJson(List<int> body) =>
-    CityWeatherEntity.fromJson(json.decode(utf8.decode(body)));
+CityWeatherEntity cityWeatherEntityDataFromString(String jsonString) {
+  Map<String, dynamic> jsonMap = json.decode(jsonString);
+  return CityWeatherEntity.fromJson(jsonMap);
+}
 
 @JsonSerializable()
 class CityWeatherEntity {

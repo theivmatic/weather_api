@@ -19,7 +19,7 @@ class DataWeatherApiImpl implements IDataWeatherApi {
       },
     );
     if (response.statusCode == 200) {
-      return cityWeatherEntityFromJson(response.bodyBytes);
+      return cityWeatherEntityDataFromString(response.body);
     } else {
       throw Exception(
           'Status Code: ${response.statusCode}, Message: ${response.reasonPhrase}');
