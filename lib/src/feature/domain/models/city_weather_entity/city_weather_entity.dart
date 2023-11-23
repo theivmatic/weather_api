@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'city_weather_entity.g.dart';
@@ -10,77 +11,112 @@ CityWeatherEntity cityWeatherEntityDataFromString(String jsonString) {
 
 @JsonSerializable()
 class CityWeatherEntity {
-  @JsonKey(name: 'location')
-  Location? location;
-  @JsonKey(name: 'current')
-  Current? current;
+  final Location? location;
+  final Current? current;
 
-  CityWeatherEntity({this.location, this.current});
+  CityWeatherEntity({
+    this.location,
+    this.current,
+  });
 
   factory CityWeatherEntity.fromJson(Map<String, dynamic> json) =>
       _$CityWeatherEntityFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CityWeatherEntityToJson(this);
+}
+
+@JsonSerializable()
+class Location {
+  final String? name;
+  final String? region;
+  final String? country;
+  final double? lat;
+  final double? lon;
+  @JsonKey(name: 'tz_id')
+  final String? tzId;
+  @JsonKey(name: 'localtime_epoch')
+  final int? localtimeEpoch;
+  final String? localtime;
+
+  Location({
+    this.name,
+    this.region,
+    this.country,
+    this.lat,
+    this.lon,
+    this.tzId,
+    this.localtimeEpoch,
+    this.localtime,
+  });
+
+  factory Location.fromJson(Map<String, dynamic> json) =>
+      _$LocationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LocationToJson(this);
 }
 
 @JsonSerializable()
 class Condition {
-  String? text;
-  String? icon;
-  int? code;
+  final String? text;
+  final String? icon;
+  final int? code;
 
-  Condition({this.text, this.icon, this.code});
+  Condition({
+    this.text,
+    this.icon,
+    this.code,
+  });
 
   factory Condition.fromJson(Map<String, dynamic> json) =>
       _$ConditionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ConditionToJson(this);
 }
 
 @JsonSerializable()
 class Current {
   @JsonKey(name: 'last_updated_epoch')
-  int? lastUpdatedEpoch;
+  final int? lastUpdatedEpoch;
   @JsonKey(name: 'last_updated')
-  String? lastUpdated;
+  final String? lastUpdated;
   @JsonKey(name: 'temp_c')
-  int? tempC;
+  final double? tempC;
   @JsonKey(name: 'temp_f')
-  double? tempF;
+  final double? tempF;
   @JsonKey(name: 'is_day')
-  int? isDay;
-  @JsonKey(name: 'condition')
-  Condition? condition;
+  final int? isDay;
+  final Condition? condition;
   @JsonKey(name: 'wind_mph')
-  double? windMph;
+  final double? windMph;
   @JsonKey(name: 'wind_kph')
-  double? windKph;
+  final double? windKph;
   @JsonKey(name: 'wind_degree')
-  int? windDegree;
+  final int? windDegree;
   @JsonKey(name: 'wind_dir')
-  String? windDir;
+  final String? windDir;
   @JsonKey(name: 'pressure_mb')
-  int? pressureMb;
+  final double? pressureMb;
   @JsonKey(name: 'pressure_in')
-  double? pressureIn;
+  final double? pressureIn;
   @JsonKey(name: 'precip_mm')
-  int? precipMm;
+  final double? precipMm;
   @JsonKey(name: 'precip_in')
-  int? precipIn;
-  @JsonKey(name: 'humidity')
-  int? humidity;
-  @JsonKey(name: 'cloud')
-  int? cloud;
+  final double? precipIn;
+  final int? humidity;
+  final int? cloud;
   @JsonKey(name: 'feelslike_c')
-  int? feelslikeC;
+  final double? feelslikeC;
   @JsonKey(name: 'feelslike_f')
-  double? feelslikeF;
+  final double? feelslikeF;
   @JsonKey(name: 'vis_km')
-  int? visKm;
+  final double? visKm;
   @JsonKey(name: 'vis_miles')
-  int? visMiles;
-  @JsonKey(name: 'uv')
-  int? uv;
+  final double? visMiles;
+  final double? uv;
   @JsonKey(name: 'gust_mph')
-  double? gustMph;
+  final double? gustMph;
   @JsonKey(name: 'gust_kph')
-  double? gustKph;
+  final double? gustKph;
 
   Current({
     this.lastUpdatedEpoch,
@@ -110,38 +146,6 @@ class Current {
 
   factory Current.fromJson(Map<String, dynamic> json) =>
       _$CurrentFromJson(json);
-}
 
-@JsonSerializable()
-class Location {
-  @JsonKey(name: 'name')
-  String? name;
-  @JsonKey(name: 'region')
-  String? region;
-  @JsonKey(name: 'country')
-  String? country;
-  @JsonKey(name: 'lat')
-  double? lat;
-  @JsonKey(name: 'lon')
-  double? lon;
-  @JsonKey(name: 'tz_id')
-  String? tzId;
-  @JsonKey(name: 'localtime_epoch')
-  int? localtimeEpoch;
-  @JsonKey(name: 'localtime')
-  String? localtime;
-
-  Location({
-    this.name,
-    this.region,
-    this.country,
-    this.lat,
-    this.lon,
-    this.tzId,
-    this.localtimeEpoch,
-    this.localtime,
-  });
-
-  factory Location.fromJson(Map<String, dynamic> json) =>
-      _$LocationFromJson(json);
+  Map<String, dynamic> toJson() => _$CurrentToJson(this);
 }
