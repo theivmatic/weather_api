@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LocationNameWidget extends StatelessWidget {
+  final String? city;
+
   const LocationNameWidget({
-    super.key,
+    super.key, required this.city,
   });
 
   @override
@@ -11,7 +13,7 @@ class LocationNameWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Moscow',
+          city ?? 'City',
           style: Theme.of(context).textTheme.headlineLarge,
         ),
         const SizedBox(width: 13),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DegreeWidget extends StatelessWidget {
+  final String? degree;
+
   const DegreeWidget({
     super.key,
+    required this.degree,
   });
 
   @override
@@ -10,10 +13,9 @@ class DegreeWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '31',
-          style: Theme.of(context).textTheme.displayLarge
-        ),
+        degree != null
+            ? Text(degree!, style: Theme.of(context).textTheme.displayLarge)
+            : const Icon(Icons.autorenew),
         Container(
           height: 58,
           alignment: Alignment.topCenter,

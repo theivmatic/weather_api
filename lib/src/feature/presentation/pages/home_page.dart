@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     currentBloc = context.read<CurrentBloc>()
-      ..add(FetchCurrentEvent(location: 'Moscow'));
+      ..add(FetchCurrentEvent(location: 'Kishinev'));
     super.initState();
   }
 
@@ -43,21 +43,28 @@ class _HomePageState extends State<HomePage> {
           child: BlocBuilder<CurrentBloc, CurrentState>(
             bloc: currentBloc,
             builder: (context, state) => switch (state) {
-              CurrentLoadedState() => const Column(
+              CurrentLoadedState() => Column(
                   children: [
-                    CustomSearchBar(),
-                    SizedBox(height: 80),
-                    WeatherPictureWidget(),
-                    SizedBox(height: 32),
-                    LocationNameWidget(),
-                    SizedBox(height: 16),
-                    DegreeWidget(),
-                    SizedBox(height: 35),
-                    OtherDataWidget(),
-                    SizedBox(height: 26),
-                    SunriseAndSunsetWidget(),
+                    const CustomSearchBar(),
+                    const SizedBox(height: 80),
+                    const WeatherPictureWidget(),
+                    const SizedBox(height: 32),
+                    LocationNameWidget(
+                        city: state.currentLoaded.location?.name),
+                    const SizedBox(height: 16),
+                    DegreeWidget(
+                      degree: state.currentLoaded.current?.tempC
+                          ?.round()
+                          .toString(),
+                    ),
+                    const SizedBox(height: 35),
+                    const OtherDataWidget(),
+                    const SizedBox(height: 26),
+                    const SunriseAndSunsetWidget(),
                   ],
                 ),
+              CurrentErrorState(errorMessage: '') => const SizedBox(),
+              CurrentLoadingState() => const SizedBox(),
               _ => const SizedBox(),
             },
           ),
