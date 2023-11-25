@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 class WeatherPictureWidget extends StatelessWidget {
+  final String? imageUrl;
+
   const WeatherPictureWidget({
     super.key,
+    required this.imageUrl,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 123,
-      height: 113,
-      decoration: const BoxDecoration(color: Colors.amber),
-    );
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height * 0.2,
+        child: Image.network(
+      'https:$imageUrl',
+      scale: 0.5,
+    ));
   }
 }

@@ -4,6 +4,7 @@ import 'package:weather_api/src/feature/presentation/bloc/current/current_bloc.d
 import 'package:weather_api/src/feature/presentation/bloc/current/current_event.dart';
 import 'package:weather_api/src/feature/presentation/bloc/current/current_state.dart';
 import 'package:weather_api/src/feature/presentation/widgets/degree.dart';
+import 'package:weather_api/src/feature/presentation/widgets/error.dart';
 import 'package:weather_api/src/feature/presentation/widgets/location_name.dart';
 import 'package:weather_api/src/feature/presentation/widgets/other_data.dart';
 import 'package:weather_api/src/feature/presentation/widgets/search_bar.dart';
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     currentBloc = context.read<CurrentBloc>()
-      ..add(FetchCurrentEvent(location: 'Kishinev'));
+      ..add(FetchCurrentEvent(location: 'Tyumn'));
     super.initState();
   }
 
@@ -34,40 +35,36 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(
-          decelerationRate: ScrollDecelerationRate.normal,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
-          child: BlocBuilder<CurrentBloc, CurrentState>(
-            bloc: currentBloc,
-            builder: (context, state) => switch (state) {
-              CurrentLoadedState() => Column(
-                  children: [
-                    const CustomSearchBar(),
-                    const SizedBox(height: 80),
-                    const WeatherPictureWidget(),
-                    const SizedBox(height: 32),
-                    LocationNameWidget(
-                        city: state.currentLoaded.location?.name),
-                    const SizedBox(height: 16),
-                    DegreeWidget(
-                      degree: state.currentLoaded.current?.tempC
-                          ?.round()
-                          .toString(),
-                    ),
-                    const SizedBox(height: 35),
-                    const OtherDataWidget(),
-                    const SizedBox(height: 26),
-                    const SunriseAndSunsetWidget(),
-                  ],
-                ),
-              CurrentErrorState(errorMessage: '') => const SizedBox(),
-              CurrentLoadingState() => const SizedBox(),
-              _ => const SizedBox(),
-            },
-          ),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
+        child: BlocBuilder<CurrentBloc, CurrentState>(
+          bloc: currentBloc,
+          builder: (context, state) => switch (state) {
+            CurrentLoadedState() => ListView(
+                children: [
+                  const CustomSearchBar(),
+                  WeatherPictureWidget(
+                    imageUrl: state.currentLoaded.current?.condition?.icon,
+                  ),
+                  LocationNameWidget(
+                      city: state.currentLoaded.location?.name),
+                  const SizedBox(height: 16),
+                  DegreeWidget(
+                    degree: state.currentLoaded.current?.tempC
+                        ?.round()
+                        .toString(),
+                  ),
+                  const SizedBox(height: 35),
+                  const OtherDataWidget(),
+                  const SizedBox(height: 26),
+                  const SunriseAndSunsetWidget(),
+                ],
+              ),
+            CurrentErrorState() =>
+              ErrorBodyWidget(errorTitle: state.errorMessage, refresh: () => currentBloc.add(FetchCurrentEvent(location: 'Tyumen')),),
+            CurrentLoadingState() => const SizedBox(),
+            _ => const SizedBox(),
+          },
         ),
       ),
     );
