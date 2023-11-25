@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_api/src/core/utils/date_format.dart';
 
 class OtherDataWidget extends StatelessWidget {
-  final int? localTime;
+  final DateTime? localTime;
 
   const OtherDataWidget({
     super.key, required this.localTime,
@@ -28,7 +28,7 @@ class OtherDataWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                localTime.dateFromEpoch,
+                localTime.toHour,
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               

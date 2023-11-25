@@ -1,8 +1,7 @@
-extension TimeFormatFromEpoch on int? {
-  String get dateFromEpoch {
-    final int hour = DateTime.fromMicrosecondsSinceEpoch(this ?? 0 * 1000).hour;
-    final int minute = DateTime.fromMicrosecondsSinceEpoch(this ?? 0 * 1000).minute;
+import 'package:intl/intl.dart';
 
-    return '$hour:$minute';
+extension TimeFormatFromEpoch on DateTime? {
+  String get toHour {
+    return DateFormat('Hm').format(this ?? DateTime.now());
   }
 }

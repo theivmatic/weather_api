@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     currentBloc = context.read<CurrentBloc>()
-      ..add(FetchCurrentEvent(location: 'Tyumen'));
+      ..add(FetchCurrentEvent(location: 'Kishinev'));
     super.initState();
   }
 
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                         .toString(),
                   ),
                   const SizedBox(height: 35),
-                  OtherDataWidget(localTime: state.currentLoaded.location?.localtimeEpoch,),
+                  OtherDataWidget(localTime: state.currentLoaded.location?.localtime),
                   const SizedBox(height: 26),
                   const SunriseAndSunsetWidget(),
                 ],
