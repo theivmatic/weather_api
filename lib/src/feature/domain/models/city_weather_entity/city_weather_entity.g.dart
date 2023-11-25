@@ -30,7 +30,9 @@ Location _$LocationFromJson(Map<String, dynamic> json) => Location(
       lon: (json['lon'] as num?)?.toDouble(),
       tzId: json['tz_id'] as String?,
       localtimeEpoch: json['localtime_epoch'] as int?,
-      localtime: json['localtime'] as DateTime?,
+      localtime: json['localtime'] == null
+          ? null
+          : DateTime.parse(json['localtime'] as String),
     );
 
 Map<String, dynamic> _$LocationToJson(Location instance) => <String, dynamic>{
