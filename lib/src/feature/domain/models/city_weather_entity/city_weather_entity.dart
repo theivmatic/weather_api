@@ -36,7 +36,7 @@ class Location {
   final String? tzId;
   @JsonKey(name: 'localtime_epoch')
   final int? localtimeEpoch;
-  final String? localtime;
+  final DateTime? localtime;
 
   Location({
     this.name,
