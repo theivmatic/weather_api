@@ -3,9 +3,10 @@ import 'package:weather_api/src/core/utils/date_format.dart';
 
 class OtherDataWidget extends StatelessWidget {
   final DateTime? localTime;
+  final double? uv;
 
   const OtherDataWidget({
-    super.key, required this.localTime,
+    super.key, required this.localTime, required this.uv,
   });
 
   @override
@@ -42,7 +43,7 @@ class OtherDataWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                '4',
+                '${uv?.round()}',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
