@@ -46,22 +46,28 @@ class _HomePageState extends State<HomePage> {
                   WeatherPictureWidget(
                     imageUrl: state.currentLoaded.current?.condition?.icon,
                   ),
-                  LocationNameWidget(
-                      city: state.currentLoaded.location?.name),
+                  LocationNameWidget(city: state.currentLoaded.location?.name),
                   const SizedBox(height: 16),
                   DegreeWidget(
-                    degree: state.currentLoaded.current?.tempC
-                        ?.round()
-                        .toString(),
+                    degree:
+                        state.currentLoaded.current?.tempC?.round().toString(),
                   ),
                   const SizedBox(height: 35),
-                  OtherDataWidget(localTime: state.currentLoaded.location?.localtime, uv: state.currentLoaded.current?.uv,),
+                  OtherDataWidget(
+                    localTime: state.currentLoaded.location?.localtime,
+                    feelsLike: state.currentLoaded.current?.feelslikeC,
+                    windSpeed: state.currentLoaded.current?.windKph,
+                    humidity: state.currentLoaded.current?.humidity,
+                  ),
                   const SizedBox(height: 26),
                   const SunriseAndSunsetWidget(),
                 ],
               ),
-            CurrentErrorState() =>
-              ErrorBodyWidget(errorTitle: state.errorMessage, refresh: () => currentBloc.add(FetchCurrentEvent(location: 'Tyumen')),),
+            CurrentErrorState() => ErrorBodyWidget(
+                errorTitle: state.errorMessage,
+                refresh: () =>
+                    currentBloc.add(FetchCurrentEvent(location: 'Tyumen')),
+              ),
             CurrentLoadingState() => const SizedBox(),
             _ => const SizedBox(),
           },

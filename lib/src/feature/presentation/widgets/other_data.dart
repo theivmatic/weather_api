@@ -3,10 +3,16 @@ import 'package:weather_api/src/core/utils/date_format.dart';
 
 class OtherDataWidget extends StatelessWidget {
   final DateTime? localTime;
-  final double? uv;
+  final double? feelsLike;
+  final double? windSpeed;
+  final int? humidity;
 
   const OtherDataWidget({
-    super.key, required this.localTime, required this.uv,
+    super.key,
+    required this.localTime,
+    required this.feelsLike,
+    required this.windSpeed,
+    required this.humidity,
   });
 
   @override
@@ -32,18 +38,17 @@ class OtherDataWidget extends StatelessWidget {
                 localTime.toHour,
                 style: Theme.of(context).textTheme.bodySmall,
               ),
-              
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                'UV',
+                'FEELS LIKE',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                '${uv?.round()}',
+                '${feelsLike?.round()}',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
@@ -52,11 +57,11 @@ class OtherDataWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                '% RAIN',
+                'WIND SPEED',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                '58%',
+                '${windSpeed?.round()} km/h',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
@@ -65,11 +70,11 @@ class OtherDataWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                'AQ',
+                'HUMIDITY',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                '22',
+                '$humidity',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
