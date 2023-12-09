@@ -2,27 +2,27 @@ import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
 
-part 'city_weather_entity.g.dart';
+part 'current_weather_entity.g.dart';
 
-CityWeatherEntity cityWeatherEntityDataFromString(String jsonString) {
+CurrentWeatherEntity currentWeatherEntityDataFromString(String jsonString) {
   Map<String, dynamic> jsonMap = json.decode(jsonString);
-  return CityWeatherEntity.fromJson(jsonMap);
+  return CurrentWeatherEntity.fromJson(jsonMap);
 }
 
 @JsonSerializable()
-class CityWeatherEntity {
+class CurrentWeatherEntity {
   final Location? location;
   final Current? current;
 
-  CityWeatherEntity({
+  CurrentWeatherEntity({
     this.location,
     this.current,
   });
 
-  factory CityWeatherEntity.fromJson(Map<String, dynamic> json) =>
-      _$CityWeatherEntityFromJson(json);
+  factory CurrentWeatherEntity.fromJson(Map<String, dynamic> json) =>
+      _$CurrentWeatherEntityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CityWeatherEntityToJson(this);
+  Map<String, dynamic> toJson() => _$CurrentWeatherEntityToJson(this);
 }
 
 @JsonSerializable()

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'city_weather_entity.dart';
+part of 'current_weather_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CityWeatherEntity _$CityWeatherEntityFromJson(Map<String, dynamic> json) =>
-    CityWeatherEntity(
+CurrentWeatherEntity _$CurrentWeatherEntityFromJson(Map<String, dynamic> json) =>
+    CurrentWeatherEntity(
       location: json['location'] == null
           ? null
           : Location.fromJson(json['location'] as Map<String, dynamic>),
@@ -16,7 +16,7 @@ CityWeatherEntity _$CityWeatherEntityFromJson(Map<String, dynamic> json) =>
           : Current.fromJson(json['current'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CityWeatherEntityToJson(CityWeatherEntity instance) =>
+Map<String, dynamic> _$CurrentWeatherEntityToJson(CurrentWeatherEntity instance) =>
     <String, dynamic>{
       'location': instance.location,
       'current': instance.current,
