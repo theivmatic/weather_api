@@ -6,6 +6,7 @@ import 'package:weather_api/src/feature/presentation/bloc/current/current_state.
 import 'package:weather_api/src/feature/presentation/widgets/degree.dart';
 import 'package:weather_api/src/feature/presentation/widgets/error.dart';
 import 'package:weather_api/src/feature/presentation/widgets/location_name.dart';
+import 'package:weather_api/src/feature/presentation/widgets/navigation_bar.dart';
 import 'package:weather_api/src/feature/presentation/widgets/other_data.dart';
 import 'package:weather_api/src/feature/presentation/widgets/search_bar.dart';
 import 'package:weather_api/src/feature/presentation/widgets/sunrise_and_sunset.dart';
@@ -41,6 +42,8 @@ class _HomePageState extends State<HomePage> {
           bloc: currentBloc,
           builder: (context, state) => switch (state) {
             CurrentLoadedState() => ListView(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 children: [
                   const CustomSearchBar(),
                   WeatherPictureWidget(
@@ -61,6 +64,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 26),
                   const SunriseAndSunsetWidget(),
+                  const CustomNavigationBar(),
                 ],
               ),
             CurrentErrorState() => ErrorBodyWidget(
@@ -76,3 +80,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
