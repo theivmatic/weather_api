@@ -64,7 +64,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 26),
                   const SunriseAndSunsetWidget(),
-                  const CustomNavigationBar(),
                 ],
               ),
             CurrentErrorState() => ErrorBodyWidget(
@@ -77,7 +76,9 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
+      bottomNavigationBar: const CustomNavigationBar(),
     );
+    
   }
 }
 
