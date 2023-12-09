@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_api/src/feature/presentation/bloc/current/current_bloc.dart';
 import 'package:weather_api/src/feature/presentation/bloc/observer.dart';
-import 'package:weather_api/src/feature/presentation/pages/home_page.dart';
+import 'package:weather_api/src/feature/presentation/pages/today_page.dart';
 
 void main() {
   Bloc.observer = AppObserver();
@@ -50,7 +50,7 @@ class MainApp extends StatelessWidget {
             ),
           ),
         ),
-        home: const HomePage(),
+        home: const TodayPage(),
         
       ),
     );

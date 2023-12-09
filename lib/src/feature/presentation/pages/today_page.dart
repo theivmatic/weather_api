@@ -12,13 +12,13 @@ import 'package:weather_api/src/feature/presentation/widgets/search_bar.dart';
 import 'package:weather_api/src/feature/presentation/widgets/sunrise_and_sunset.dart';
 import 'package:weather_api/src/feature/presentation/widgets/weather_picture.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class TodayPage extends StatefulWidget {
+  const TodayPage({super.key});
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<TodayPage> createState() => _TodayPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _TodayPageState extends State<TodayPage> {
   late CurrentBloc currentBloc;
 
   @override
